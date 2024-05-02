@@ -26,11 +26,9 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
-                  identifier: BuildAndPushDockerRegistry_1
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
                   spec:
-                    connectorRef: account.harnessImage
-                    repo: sveerla
-                    tags:
-                      - teseract
+                    shell: Sh
+                    command: mvn -B -DskipTests clean package
