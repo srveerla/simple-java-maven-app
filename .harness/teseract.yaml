@@ -32,3 +32,27 @@ pipeline:
                   spec:
                     shell: Sh
                     command: mvn -B -DskipTests clean package
+    - stage:
+        name: package
+        identifier: package
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    repo: sveerla
+                    tags:
+                      - testeract
