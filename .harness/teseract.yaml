@@ -52,7 +52,7 @@ pipeline:
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    connectorRef: testrepo
+                    connectorRef: dockerhub
                     repo: srveerla/teseract
                     tags:
                       - testeract
