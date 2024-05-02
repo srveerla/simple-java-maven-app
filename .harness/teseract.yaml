@@ -52,7 +52,7 @@ pipeline:
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    connectorRef: account.harnessImage
+                    connectorRef: teseract
                     repo: sveerla/teseract
                     tags:
                       - testeract
